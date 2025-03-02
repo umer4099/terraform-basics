@@ -1,0 +1,43 @@
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
+
+# Terraform variables files (to prevent committing sensitive data)
+*.tfvars
+*.tfvars.json
+!example.tfvars  # Allow an example file for reference
+
+# Override files (local custom settings)
+.override.tf
+.override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform crash logs
+crash.log
+crash.*.log
+
+# Terraform provider plugins
+.terraform/
+.terraform.lock.hcl
+.terraform.tfstate
+
+# Generated Terraform plan files
+*.plan
+
+# Ignore Terraform logs & debug output
+terraform.log
+terraform-debug.log
+
+# Ignore output files
+output.tfvars
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore MacOS system files
+.DS_Store
+# Allow dev.tfvars
+!dev.tfvars
