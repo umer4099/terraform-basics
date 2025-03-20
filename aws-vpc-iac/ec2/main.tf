@@ -24,6 +24,8 @@ resource "aws_instance" "example_server" {
 echo "Copying the SSH Key to the server"
 echo -e "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDz9kPlbhG3fZc5npyAAYwrtwUnhN4bXXl0GzSKQbwIDziL1luYAmLCX4fJEBGXcPq2MOPq0wOfdEi8mOCiKn64tDDKaUckMfztsXBC0cxtHMJ5OZ1QUzKhtDmDGYhprApaknFIsyCqVCnSgGC8BY4TJ2vzronQATUNbMSQdxZRgkJV84uxc2TOA0n1lmdaZQjXHTKvvpxbYtbrkmnjFHpDaaa5n0phYtNaWpeGPKaHGOR8UFQjEzjUqUs3Qt17Wg6qM8j5oQMdbwxIM4dpvF54JA2kAm1y/rzJ/rPWyjKH9meu9NKRIVixMJcZPzObcHi+fRtxobG+sMNBNBxTjpnfROILRtWvyxeEf61c0WeS/PHCuLNbgjiaQh2vFhEXWGJb4I4ex/+c1Hmf+P5riLL3JrsFuI3wXAHGxR2/WWZfjES/cu1xpcXVTuRMxqQ95lzjRBhd2FRLqgMCJ5tQvAI9mqDb2hTT7a9NH0IwMAxnnxPZBrwixif2J8jI3EYhF2M= umer@pop-os
 " >> /home/ubuntu/.ssh/authorized_keys
+sudo apt update -y
+sudo apt install nginx -y
 EOF
 
   tags = {

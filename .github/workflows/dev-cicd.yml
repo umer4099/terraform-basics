@@ -1,0 +1,45 @@
+name: Terraform Infra Deploy
+
+# Trigger on push to the main branch
+on:
+  push:
+    branches:
+      - dev-cicd
+
+# Define jobs
+jobs:
+  terraform:
+    # Use self-hosted runner
+    runs-on: self-hosted
+
+    # Environment variables from GitHub Secrets
+    # env:
+ 
+    steps:
+      # Checkout the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Verify Terraform is installed
+      - name: Setup Terraform
+        run: terraform --version
+
+      # Initialize Terraform in the docker/ directory
+      - name: Terraform Init
+        run: terraform init
+        working-directory: ./docker
+
+      # Validate Terraform configuration
+      - name: Terraform Validate
+        run: terraform validate
+        working-directory: ./docker
+
+      # Plan Terraform changes with dev.tfvars
+      - name: Terraform Plan
+        run: terraform plan -var-file=dev.tfvars -out=tfplan
+        working-directory: ./docker
+
+      # Apply Terraform changes
+      - name: Terraform Apply
+        run: terraform apply -auto-approve tfplan
+        working-directory: ./docker
