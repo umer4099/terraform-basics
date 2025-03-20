@@ -41,3 +41,8 @@ output.tfvars
 .DS_Store
 # Allow dev.tfvars
 !dev.tfvars
+# .gitignore
+docker/terraform.tfstate
+docker/terraform.tfstate.backup
+docker/.terraform/
+docker/.terraform.lock.hcl
