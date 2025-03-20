@@ -1,5 +1,5 @@
 image_id = "alpine"
-image_web = ""
+image_web = "nginx:latest"
 command = ["/bin/sh", "-c", "while true; do sleep 1000; done"]
 env = [ "name=web", "enviorment=dev","CHOKIDAR_USEPOLLING=true" ]
 mysql_image = "mysql"
