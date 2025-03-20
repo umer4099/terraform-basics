@@ -6,3 +6,4 @@ mysql_image = "mysql"
 mysql_root = [ "MYSQL_ROOT_PASSWORD=newroot","MYSQL_DATABASE=terraform"]
 pipline_image = "jenkins/jenkins:lts"
 pma_image = "phpmyadmin"
+
