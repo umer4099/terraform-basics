@@ -76,7 +76,7 @@ resource "docker_container" "httpd" {
     external = 3005
   }
   env = var.env
-  user = "node"
+  # user = "node"
   lifecycle {
     prevent_destroy = true
   ignore_changes = [
